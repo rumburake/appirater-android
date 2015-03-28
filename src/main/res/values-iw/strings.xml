@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appirator_app_title">דרג את %s</string>
+    <string name="appirator_rate_title">שיעור %s</string>
+    <string name="appirator_message">אם נהנת להשתמש ב %s, האם תסכים לדרג אותה? זה לא יקח יותר מדקה. תודה על התמיכה!</string>
+    <string name="appirator_button_rate">דרג את %s</string>
+    <string name="appirator_button_rate_later">מאוחר יותר</string>
+    <string name="appirator_button_rate_cancel">לא תודה</string>
+</resources>

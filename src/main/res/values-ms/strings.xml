@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appirator_app_title">Tarafkan %s</string>
+    <string name="appirator_rate_title">Kadar %s</string>
+    <string name="appirator_message">Jika anda suka %s, bolehkah luangkan sedikit masa untuk beri penarafan? Tak sampai seminit pun. Terima kasih atas sokongan anda!</string>
+    <string name="appirator_button_rate">Tarafkan %s</string>
+    <string name="appirator_button_rate_later">Ingatkan saya lain kali</string>
+    <string name="appirator_button_rate_cancel">Terima kasih saja</string>
+</resources>

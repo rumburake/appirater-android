@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appirator_app_title">ให้อันดับ %s</string>
+    <string name="appirator_rate_title">ประเมิน %s</string>
+    <string name="appirator_message">ถ้าคุณกำลังใช้ %s โปรดสละเวลาสักครู่ในการให้อันดับแก่เรา คุณจะเสียเวลาไม่เกินหนึ่งนาที ขอบคุณสำหรับการสนับสนุน!</string>
+    <string name="appirator_button_rate">ให้อันดับ %s</string>
+    <string name="appirator_button_rate_later">เตือนฉันภายหลัง</string>
+    <string name="appirator_button_rate_cancel">ไม่ ขอบคุณ</string>
+</resources>

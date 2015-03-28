@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appirator_app_title">Ohodnotit %s</string>
+    <string name="appirator_rate_title">Tarifa %s</string>
+    <string name="appirator_message">Pokud se Vám aplikace %s líbí, mohli byste ji prosím ohodnotit v App Store? Zabere to jen chvilku. Díky za Vaši podporu!</string>
+    <string name="appirator_button_rate">Ohodnotit %s</string>
+    <string name="appirator_button_rate_later">Možná později</string>
+    <string name="appirator_button_rate_cancel">Ne, díky</string>
+</resources>

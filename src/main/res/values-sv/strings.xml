@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appirator_app_title">Betygsätt %s</string>
+    <string name="appirator_rate_title">Betyg %s</string>
+    <string name="appirator_message">Om du tycker att %s är ett praktiskt verktyg, kan du tänka dig att betygsätta det åt oss? Det tar bara en minut. Tack för hjälpen!</string>
+    <string name="appirator_button_rate">Betygsätt %s</string>
+    <string name="appirator_button_rate_later">Påminn mig senare</string>
+    <string name="appirator_button_rate_cancel">Nej tack</string>
+</resources>
