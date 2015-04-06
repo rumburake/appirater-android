@@ -18,11 +18,13 @@ Maven Artifact
 --------------
 This library is in the Maven Central Library hosted by Sonatype.
 In Gradle, you can reference it with this in your dependencies:
+
     ```
     compile group: 'com.keysolutions', name: 'appirater-android', version: '1.4.0.0'
     ```
 
 And in Maven, you can reference it with this:
+
     ```
     <dependency>
       <groupId>com.keysolutions</groupId>
