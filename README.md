@@ -3,13 +3,13 @@ Introduction
 This is a modified version of
    https://github.com/drewjw81/appirater-android/
 
-It adds a few features:
+These are new features of this fork:
   - all strings are overrideable via appirater-settings.xml instead of only the buttons
   - used a different layout so the title/divider color can be color matched to your app's theme
   - added callback for which buttons users press so you can do analytics on what they do
   - added support for timed/untimed major events in case you want to prompt for a rating only after a certain number of days
   - fixed missing language string so lint won't barf
-  - added to Maven Central so it can be used w/ Android Studio
+  - added to Maven Central so it can be used w/ Android Studio (the original supposedly was in Maven Central but never was)
 
 The class package name remains com.sbstrm.appirater for historical reasons, but the Maven artifact is in the com.keysolutions group because that's what I can upload to.
 
@@ -18,16 +18,19 @@ Maven Artifact
 --------------
 This library is in the Maven Central Library hosted by Sonatype.
 In Gradle, you can reference it with this in your dependencies:
-
+    ```
     compile group: 'com.keysolutions', name: 'appirater-android', version: '1.4.0.0'
+    ```
 
 And in Maven, you can reference it with this:
+    ```
     <dependency>
       <groupId>com.keysolutions</groupId>
       <artifactId>appirater-android</artifactId>
       <version>1.4.0.0</version>
       <type>pom</type>
     </dependency>
+    ```
 
 Set up
 -------------------------
