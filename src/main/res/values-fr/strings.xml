@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_app_title">Notez %s</string>
     <string name="appirator_rate_title">Taux %s</string>
     <string name="appirator_message">Si vous aimez %s, voulez-vous prendre un moment pour l\'évaluer? Cela ne vous prendra pas plus d\'une minute. Merci de votre soutien!</string>
     <string name="appirator_button_rate">Notez %s</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_app_title">Rating %s</string>
     <string name="appirator_rate_title">Laju %s</string>
     <string name="appirator_message">Jika anda menyukai %s, maukah anda memberikan rating kepada aplikasi ini? Rating hanya memakan waktu kurang dari 1 menit. Terimakasih untuk dukungan anda!</string>
     <string name="appirator_button_rate">Rating %s</string>

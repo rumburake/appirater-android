@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_app_title">Valuta %s</string>
     <string name="appirator_rate_title">Tasso %s</string>
     <string name="appirator_message">Se trovi utile %s, perché non spendere qualche momento per dare una valutazione? Non richiederà più di un minuto. Grazie per il supporto!</string>
     <string name="appirator_button_rate">Valuta %s</string>

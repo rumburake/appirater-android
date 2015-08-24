@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_app_title">قيم %s</string>
     <string name="appirator_rate_title">معدل %s</string>
     <string name="appirator_message">إذا كنت تستمع باستخدام %s، فهل تمانع بأن تأخذ دقيقة من وقتك لتقيمه؟ لن يستغرق الأمر أكثر من دقيقة. شكرا لدعمك!</string>
     <string name="appirator_button_rate">قيم %s</string>

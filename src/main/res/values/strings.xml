@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="appirator_rate_title">Rate %s</string>
+    <string name="appirator_message">Enjoying %s? If so, please rate us in the Play Store! Thanks!</string>
+    <string name="appirator_button_rate">Yes, Rate %s</string>
+    <string name="appirator_button_rate_later">Remind me later</string>
+    <string name="appirator_button_rate_cancel">No, Thanks</string>
 </resources>

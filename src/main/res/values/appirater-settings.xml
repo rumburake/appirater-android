@@ -5,16 +5,11 @@
     	Amazon App Store = http://www.amazon.com/gp/mas/dl/android?p=%s
      -->
     <string name="appirator_app_title">Your App Name</string>
-    <string name="appirator_rate_title">Rate %s</string>
-    <string name="appirator_message">Enjoying %s? If so, please rate us in the Play Store! Thanks!</string>
     <string name="appirator_market_url" translatable="false">market://details?id=%s</string>
     <integer name="appirator_days_until_prompt">30</integer>
     <integer name="appirator_launches_until_prompt">15</integer>
     <integer name="appirator_untimed_events_until_prompt">15</integer>
     <integer name="appirator_timed_events_until_prompt">15</integer>
-    <string name="appirator_button_rate">Yes, Rate %s</string>
-    <string name="appirator_button_rate_later">Remind me later</string>
-    <string name="appirator_button_rate_cancel">No, Thanks</string>
     <!-- Set this to 0 to remind every launch -->
     <integer name="appirator_days_before_reminding">3</integer>
     <!-- Change to true to show every time, for testing -->

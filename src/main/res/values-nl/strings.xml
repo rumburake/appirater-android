@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_app_title">%s beoordelen</string>
     <string name="appirator_rate_title">Rate %s</string>
     <string name="appirator_message">Als het gebruik van %s je bevalt, zou je dan een momentje de tijd willen nemen om het te beoordelen? Het duurt nog geen minuut. Bedankt voor je steun!</string>
     <string name="appirator_button_rate">%s beoordelen</string>
