@@ -7,6 +7,7 @@
     <TextView
         android:id="@+id/title"
         android:text="@string/appirator_app_title"
+        android:freezesText="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -25,6 +26,7 @@
 
     <TextView
         android:id="@+id/message"
+        android:freezesText="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -35,6 +37,7 @@
 
     <Button
         android:id="@+id/rate"
+        android:freezesText="true"
         style="@style/appiratorButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -47,6 +50,7 @@
 
     <Button
         android:id="@+id/rateLater"
+        android:freezesText="true"
         style="@style/appiratorButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -59,6 +63,7 @@
 
     <Button
         android:id="@+id/cancel"
+        android:freezesText="true"
         style="@style/appiratorButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

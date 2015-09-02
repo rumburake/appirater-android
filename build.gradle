@@ -1,152 +1,24 @@
-apply plugin: 'signing'
-apply plugin: 'maven'
-
-group = 'com.keysolutions'
-version = '1.4.0.0'
-
 buildscript {
    repositories {
       mavenCentral()
    }
    dependencies {
-      classpath 'com.android.tools.build:gradle:1.0.+'
+      classpath 'com.android.tools.build:gradle:1.2.3'
    }
 }
 
 apply plugin: 'android-library'
 
-/// Project info
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
     
     defaultConfig {
-        targetSdkVersion 22
-        minSdkVersion 10
-        versionCode 10
+        targetSdkVersion 21
+        minSdkVersion 8
     }
-}
-
-
-/// add dependencies
-repositories {
-    mavenCentral()
 }
 
 dependencies {
-    compile "com.android.support:support-v4:[22.0,)"
+    compile 'com.android.support:support-v4:21.0.3'
 }
-
-/// add tasks for Maven Central
-//jar method lives inside java plugin which we can't include because it conflicts w/ Android plugin :-P
-//jar {
-//    manifest {
-//        attributes 'Implementation-Title': 'Android DDP Client Library', 'Implementation-Version': version
-//    }
-//}
-
-task makeJavadoc(type:Exec) {
-	if (System.properties['os.name'].toLowerCase().contains('windows')) {
-      commandLine 'cmd', '/c', 'javadoc', '-d', 'build/docs/javadoc', '-sourcepath', './src/main/java', '-subpackages', 'com'
-    } else {
-      commandLine 'javadoc', '-d', 'build/docs/javadoc', '-sourcepath', './src/main/java', '-subpackages', 'com'
-	}
-    standardOutput = new ByteArrayOutputStream()
-    errorOutput = new ByteArrayOutputStream()
-    //extension method makeJavadoc.output() can be used to obtain the output:
-    ext.output = {
-        return standardOutput.toString()
-    }
-    ext.error = {
-        return errorOutput.toString()
-    }
-}
-// can't ", dependsOn: javadoc" because that is in the java plugin which isn't compatible w/ Android plugin :-P
-task javadocJar(type: Jar, dependsOn: makeJavadoc) {
-    classifier = 'javadoc'
-    from 'build/docs/javadoc'
-}
- 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-project.ext.sonatypeUsername = project.hasProperty('sonatypeUsername') ? sonatypeUsername : ""
-project.ext.sonatypePassword = project.hasProperty('sonatypePassword') ? sonatypePassword : ""
-
-uploadArchives {
-    repositories.mavenDeployer {
-        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
- 
-        repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-            authentication(userName: sonatypeUsername, password: sonatypePassword)
-        }
- 
-        pom.project {
-            name 'appirater-android'
-            packaging 'aar'
-            description 'Android version of iOS appirater'
-            url 'https://github.com/kenyee/appirater-android'
- 
-            scm {
-                url 'scm:git@github.com:kenyee/appirater-android.git'
-                connection 'scm:git@github.com:kenyee/appirater-android.git'
-                developerConnection 'scm:git@github.com:kenyee/appirater-android.git'
-            }
- 
-            licenses {
-                license {
-                   name 'MIT License'
-                   url 'http://opensource.org/licenses/MIT'
-                   distribution 'repo'
-                }
-            }
- 
-            developers {
-                developer {
-                    id 'kenyee'
-                    name 'Ken Yee'
-                }
-            }
-        }
-    }
-}
-
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-signing {
-    sign configurations.archives
-}
-
-
-// use this for testing pom.xml generation
-task writeNewPom << {
-    pom {
-        project {
-            inceptionYear '2015'
-            licenses {
-                license {
-                    name 'MIT License'
-                    url 'http://opensource.org/licenses/MIT'
-                    distribution 'repo'
-                }
-            }
-        }
-        /* converts Gradle dynamic dependency syntax 
-        whenConfigured { generatedPom ->
-          generatedPom.dependencies.each { mavenDep ->
-            if (isDynamic(mavenDep)) {
-              mavenDep.version = '[' + mavenDep.version[0..-2] + ',)'
-            }
-          }
-        }
-        */
-
-    }.writeTo("$buildDir/newpom.xml")
-}
-
-
-
