@@ -68,3 +68,7 @@ These are all the settings that can be configured via the xml file:
  - appirator_button_end_color: gradient end color for buttons
  - appirator_button_text_color: button text color
  - appirator_title_color: title/divider color
+
+License
+-------------------------
+MIT/X11: http://opensource.org/licenses/MIT
