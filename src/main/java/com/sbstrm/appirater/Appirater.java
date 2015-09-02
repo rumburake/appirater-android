@@ -57,6 +57,10 @@ public class Appirater {
     SharedPreferences mPrefs;
     SharedPreferences.Editor mEditor;
 
+    public void reset() {
+        mEditor.clear().commit();
+    }
+
     public void appLaunched(FragmentActivity activity) {
         boolean testMode = mContext.getResources().getBoolean(R.bool.appirator_test_mode);
         if (!testMode && (mPrefs.getBoolean(PREF_DONT_SHOW, false) || mPrefs.getBoolean(PREF_RATE_CLICKED, false))) {
