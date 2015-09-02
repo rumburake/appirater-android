@@ -1,39 +1,52 @@
 Introduction
 ------------
-This is a modified version of
-   https://github.com/drewjw81/appirater-android/
+This is a modified version of:
+    https://github.com/kenyee/appirater-android
+...which is a modified version of:
+    https://github.com/drewjw81/appirater-android/
 
-These are new features of this fork:
-  - all strings are overrideable via appirater-settings.xml instead of only the buttons
-  - used a different layout so the title/divider color can be color matched to your app's theme
-  - added callback for which buttons users press so you can do analytics on what they do
-  - added support for timed/untimed major events in case you want to prompt for a rating only after a certain number of days
-  - fixed missing language string so lint won't barf
-  - added to Maven Central so it can be used w/ Android Studio (the original supposedly was in Maven Central but never was)
+Old versions were using the obsolete Dialog interface. This version switches to DialogFragments with full lifecycle support.
+Please note there is no maven but it can be integrated actually easier than using maven.
+You can more easily contribute (such as adding a new language) without waiting for the git pull request and the maven build to be done for you.
+The telemetry interface has been removed. To reset preferences during testing use reset().
 
-The class package name remains com.sbstrm.appirater for historical reasons, but the Maven artifact is in the com.keysolutions group because that's what I can upload to.
-
-
-Maven Artifact
---------------
-This library is in the Maven Central Library hosted by Sonatype.
-In Gradle, you can reference it with this in your dependencies:
-
-    compile group: 'com.keysolutions', name: 'appirater-android', version: '1.4.0.0'
-
-And in Maven, you can reference it with this:
-
-    <dependency>
-      <groupId>com.keysolutions</groupId>
-      <artifactId>appirater-android</artifactId>
-      <version>1.4.0.0</version>
-      <type>pom</type>
-    </dependency>
+The class package name remains com.sbstrm.appirater for historical reasons.
 
 Set up
 -------------------------
-1. Copy the /res/values/appirater-settings.xml from the AppiraterAndroid library in to your projects /res/values/ folder and adjust the settings to your preference.
-2. Add Appirater.appLaunched(this); to the onCreate method in your main Activity.
+
+1. Put this in a folder in your project (e.g.: app/libs/appirater)
+
+2. In app/settings.gradle add the library:
+
+        dependencies {
+            [...]
+            compile project(':app:libs:appirater')
+        }
+
+3. Liberally modify your required Gradle, SDK and Support versions you want to use in your build in appirater/build.gradle
+
+4. Copy the /res/values/appirater-settings.xml from the AppiraterAndroid library in to your projects /res/values/ folder and adjust the settings to your preference.
+    At a minimum modify appirater_app_title to the title of your app.
+
+5. Add Appirater.appLaunched(this); to the onCreate method in your main Activity.
+
+        if (savedInstanceState == null) {
+            Appirater.getRater(getApplicationContext()).appLaunched(this);
+        }
+
+6. Implement the RateDialog.RateDialogListener in your Activity as follow (ad literam):
+
+        @Override
+        public void rateAction(Appirater.RateDialogAction rateDialogAction) {
+            Appirater.getRater(getApplicationContext()).rateAction(rateDialogAction);
+        }
+
+   This is because DialogFragment can only reliably talk back to an Activity what created it.
+   The glue above delivers the action from whichever Activity was Dialog's parent to the AppiRater logic.
+   This is useful when rotate screens or leaving and returning to the app occurred while dialog was displayed.
+   The reason for this ugly hook is because new Dialog as Fragment APIs encumber any libraries in providing seamless ready to use Dialogs. See:
+        http://developer.android.com/guide/topics/ui/dialogs.html#PassingEvents
 
 appirater-settings.xml
 -----------------------
@@ -55,8 +68,3 @@ These are all the settings that can be configured via the xml file:
  - appirator_button_end_color: gradient end color for buttons
  - appirator_button_text_color: button text color
  - appirator_title_color: title/divider color
-
-Analytics Callback
-------------------
-There was a need for analytics callbacks for the buttons user clicked in the rating prompt dialog, so the RatingButtonListener interface was added.
-You can add this support in the appLaunched() call as the second parameter; you'll get calls to the onRate, onLater, and onDeclined methods when users click them.  If you have no need for this, pass in null instead.
