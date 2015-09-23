@@ -156,16 +156,20 @@ public class Appirater {
         rateDialog.show(activity.getSupportFragmentManager(), "appirater");
     }
 
+    public void rateDirect() {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(mContext.getString(R.string.appirator_market_url), mContext.getPackageName())));
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            mContext.startActivity(i);
+        } catch (ActivityNotFoundException e) {
+            // no market
+        }
+    }
+
     public void rateAction(RateDialogAction rateDialogAction) {
         switch (rateDialogAction) {
             case RATE_YES:
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(mContext.getString(R.string.appirator_market_url), mContext.getPackageName())));
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                try {
-                    mContext.startActivity(i);
-                } catch (ActivityNotFoundException e) {
-                    // no market
-                }
+                rateDirect();
                 mEditor.putBoolean(PREF_RATE_CLICKED, true);
                 mEditor.commit();
                 break;
