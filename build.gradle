@@ -1,15 +1,29 @@
 apply plugin: 'com.android.library'
 
+// Define the versions below in your root gradle file so that all modules match.
+// The root gradle definitions should look like:
+
+//ext {
+//    compileSdkVersion = 25
+//    buildToolsVersion = "25.0.2"
+//    targetSdkVersion = 25
+//    minSdkVersion = 9
+//    supportLibsVersion = '25.3.0'
+//}
+
+// If you don't want to use defines,
+// you can instead modify this file to use the desired values directly.
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     
     defaultConfig {
-        targetSdkVersion 25
-        minSdkVersion 9
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:25.3.0'
+    compile "com.android.support:support-v4:${rootProject.ext.supportLibsVersion}"
 }
