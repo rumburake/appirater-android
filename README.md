@@ -11,64 +11,69 @@ A dialog will prompt the user to rate the app on the app store. When the user:
  
 The dialog can look like this:
 
-[Default Theme](AppiraterLight.png) [Customised Theme](AppiratorDark.png)
+Default Theme:
 
-Set up
--------------------------
+<img src="./AppiraterLight.png" width="300">
 
-1. Check out the project in 
+Customised Theme:
 
-2. In app/settings.gradle add the library:
+<img src="./AppiratorDark.png" width="300">
+
+# Set up
+--------
+
+## As a compiled library
+1. Download the `appirater-android-release.aar` and place it in your libs e.g. `app/libs/appirater-android-release.aar`
+2. In your `app/build.gradle` add the module as a dependency:
 
         dependencies {
             [...]
-            compile project(':app:libs:appirater')
+            dependencies {
+                implementation files('libs/appirater-android-release.aar')
+            [...]
         }
 
-3. Liberally modify your required Gradle, SDK and Support versions you want to use in your build in appirater/build.gradle
+## As a sub-module
+1. Check check out the project as a module in your project, e.g. in directory `appirater-android`
+2. In your `app/build.gradle` add the module as a dependency:
 
-4. Copy the /res/values/appirater-settings.xml from the AppiraterAndroid library in to your projects /res/values/ folder and adjust the settings to your preference.
-    At a minimum modify appirater_app_title to the title of your app.
-
-5. Add Appirater.appLaunched(this); to the onCreate method in your main Activity.
-
-        if (savedInstanceState == null) {
-            Appirater.getRater(getApplicationContext()).appLaunched(this);
+        dependencies {
+            [...]
+            dependencies {
+                implementation project(':appirater-android')
+            [...]
         }
 
-6. Implement the RateDialog.RateDialogListener in your Activity as follow (ad literam):
+# Customization
+:warning: At a minimum modify `appirater_app_title` to read the title of your app.
 
-        @Override
-        public void rateAction(Appirater.RateDialogAction rateDialogAction) {
-            Appirater.getRater(getApplicationContext()).rateAction(rateDialogAction);
-        }
-
-   This is because DialogFragment can only reliably talk back to an Activity what created it.
-   The glue above delivers the action from whichever Activity was Dialog's parent to the AppiRater logic.
-   This is useful when rotate screens or leaving and returning to the app occurred while dialog was displayed.
-   The reason for this ugly hook is because new Dialog as Fragment APIs encumber any libraries in providing seamless ready to use Dialogs. See:
-        http://developer.android.com/guide/topics/ui/dialogs.html#PassingEvents
-
-appirater-settings.xml
+## Settings
 -----------------------
-These are all the settings that can be configured via the xml file:
- - appirater_app_title: your app name
- - appirater_rate_title: dialog title string
- - appirater_message: prompt for rating app
- - appirater_market_url: URL to app store to rate your app
- - appirater_days_until_prompt: days until it prompts you
- - appirater_launches_until_prompt: #launches until it prompts
- - appirater_untimed_events_until_prompt: #events until it prompts (no time limit)
- - appirater_timed_events_until_prompt: #events until it prompts but only after appirater_launches_until_prompt has been hit
- - appirater_button_rate: text for Rate Now button
- - appirater_button_rate_later: text for Later button
- - appirater_button_rate_cancel: text for Don't Rate button
- - appirater_days_before_reminding: #days before it reminds you after you press Later
- - appirater_test_mode: if set to "true", will show you dialog immediately for testing
- - appirater_button_start_color: gradient start color for buttons
- - appirater_button_end_color: gradient end color for buttons
- - appirater_button_text_color: button text color
- - appirater_title_color: title/divider color
+You can change any of these values below by re-defining it in a `values` XML file.
+
+You can copy the `res/values/appirater-settings.xml` in to your project's `/res/values/` folder and adjust the settings to your preference.
+
+These are all the settings that can be configured via the XML file:
+ - `appirater_app_title`: your app name
+ - `appirater_market_url`: URL of your app store (default: Google Play)
+   - Google Play App Store = `market://details?id=%s`
+   - Amazon App Store = `http://www.amazon.com/gp/mas/dl/android?p=%s
+ - `appirater_days_until_prompt`: minimum days from initioal launch until prompt to rate (default: 30)
+ - `appirater_launches_until_prompt`: minimum launches until it prompts to rate (default: 15)
+ - `appirater_untimed_events_until_prompt`: minumum events until it prompts to rate, regardless of time since launch (default: 15)
+ - `appirater_timed_events_until_prompt`: minimum events until it prompts to rate, but only after the minimum days has passed (default: 15)
+ - `appirater_days_before_reminding`: if user chose *Later*, minimum days before it prompts to rate again (default: 3)
+ - `appirater_test_mode`: set this to *true* for testing the dialog at every launch (default: false)
+ 
+## Colors
+---------
+You can change any of those values below by re-defining it in a `colors` XML file.
+ - `appirater_button_start_color`: gradient start color for buttons
+ - `appirater_button_end_color`: gradient end color for buttons
+ - `appirater_button_text_color`: button text color
+ - `appirater_title_color`: title, divider and contour color
+ - `appirater_message_color`: text message color
+ - `appirater_background_color`: the background color of the whole dialog
 
 License
 -------------------------
