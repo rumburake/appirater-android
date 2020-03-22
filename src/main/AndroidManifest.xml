@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sbstrm.appirater" >
+    package="com.threecats.appirater">
+
+    <application>
+        <activity
+            android:name="com.threecats.appirater.RateActivity"
+            android:theme="@style/AppiraterDialog" />
+    </application>
 
 </manifest>

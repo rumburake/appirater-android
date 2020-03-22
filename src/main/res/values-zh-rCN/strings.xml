@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_rate_title">率 %s</string>
-    <string name="appirator_message">如果你喜歡使用%s，你介意花一點時間給它評分嗎？不會超過一分鐘。感謝您的支持！</string>
-    <string name="appirator_button_rate">給%s評分</string>
-    <string name="appirator_button_rate_later">稍後提醒我</string>
-    <string name="appirator_button_rate_cancel">不，謝謝</string>
+    <string name="appirater_rate_title">率 %s</string>
+    <string name="appirater_message">如果你喜歡使用%s，你介意花一點時間給它評分嗎？不會超過一分鐘。感謝您的支持！</string>
+    <string name="appirater_button_rate">給%s評分</string>
+    <string name="appirater_button_rate_later">稍後提醒我</string>
+    <string name="appirater_button_rate_cancel">不，謝謝</string>
 </resources>

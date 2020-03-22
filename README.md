@@ -1,21 +1,22 @@
 Introduction
 ------------
-This is a modified version of:
-    https://github.com/kenyee/appirater-android
-...which is a modified version of:
-    https://github.com/drewjw81/appirater-android/
+A simple to integrate and easy to use application rater for Android apps.
 
-Old versions were using the obsolete Dialog interface. This version switches to DialogFragments with full lifecycle support.
-Please note there is no maven but it can be integrated actually easier than using maven.
-You can more easily contribute (such as adding a new language) without waiting for the git pull request and the maven build to be done for you.
-The telemetry interface has been removed. To reset preferences during testing use reset().
+How it works
+------------
+A dialog will prompt the user to rate the app on the app store. When the user:
+ - chooses *Yes*, he is sent to the app store
+ - chooses *Later*, he is reminded again later
+ - chooses *No* he won't be bothered again
+ 
+The dialog can look like this:
 
-The class package name remains com.sbstrm.appirater for historical reasons.
+[Default Theme](AppiraterLight.png) [Customised Theme](AppiratorDark.png)
 
 Set up
 -------------------------
 
-1. Put this in a folder in your project (e.g.: app/libs/appirater)
+1. Check out the project in 
 
 2. In app/settings.gradle add the library:
 
@@ -53,22 +54,28 @@ appirater-settings.xml
 These are all the settings that can be configured via the xml file:
  - appirater_app_title: your app name
  - appirater_rate_title: dialog title string
- - appirator_message: prompt for rating app
- - appirator_market_url: URL to app store to rate your app
- - appirator_days_until_prompt: days until it prompts you
- - appirator_launches_until_prompt: #launches until it prompts
- - appirator_untimed_events_until_prompt: #events until it prompts (no time limit)
- - appirator_timed_events_until_prompt: #events until it prompts but only after appirator_launches_until_prompt has been hit
- - appirator_button_rate: text for Rate Now button
- - appirator_button_rate_later: text for Later button
- - appirator_button_rate_cancel: text for Don't Rate button
- - appirator_days_before_reminding: #days before it reminds you after you press Later
- - appirator_test_mode: if set to "true", will show you dialog immediately for testing
- - appirator_button_start_color: gradient start color for buttons
- - appirator_button_end_color: gradient end color for buttons
- - appirator_button_text_color: button text color
- - appirator_title_color: title/divider color
+ - appirater_message: prompt for rating app
+ - appirater_market_url: URL to app store to rate your app
+ - appirater_days_until_prompt: days until it prompts you
+ - appirater_launches_until_prompt: #launches until it prompts
+ - appirater_untimed_events_until_prompt: #events until it prompts (no time limit)
+ - appirater_timed_events_until_prompt: #events until it prompts but only after appirater_launches_until_prompt has been hit
+ - appirater_button_rate: text for Rate Now button
+ - appirater_button_rate_later: text for Later button
+ - appirater_button_rate_cancel: text for Don't Rate button
+ - appirater_days_before_reminding: #days before it reminds you after you press Later
+ - appirater_test_mode: if set to "true", will show you dialog immediately for testing
+ - appirater_button_start_color: gradient start color for buttons
+ - appirater_button_end_color: gradient end color for buttons
+ - appirater_button_text_color: button text color
+ - appirater_title_color: title/divider color
 
 License
 -------------------------
 MIT/X11: http://opensource.org/licenses/MIT
+
+This is originally forked from:
+    https://github.com/kenyee/appirater-android
+...which is a modified version of:
+    https://github.com/drewjw81/appirater-android/
+

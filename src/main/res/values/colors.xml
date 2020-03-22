@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Appirater button colors -->
+    <color name="appirater_button_start_color">#ff449def</color>
+    <color name="appirater_button_end_color">#ff2f6699</color>
+    <color name="appirater_button_text_color">#ffffffff</color>
+    <!-- Appirater title color -->
+    <color name="appirater_title_color">#ff449def</color>
+    <!-- Appirater dialog color -->
+    <color name="appirater_message_color">#ff174065</color>
+    <color name="appirater_background_color">#ffE9F5FF</color>
+</resources>

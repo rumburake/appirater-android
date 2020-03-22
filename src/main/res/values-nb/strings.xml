@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_rate_title">Sats %s</string>
-    <string name="appirator_message">Hvis du liker å bruke %s, kan du ta deg et øyeblikk for å vurdere den? Det vil ikke ta mer enn ett minutt. Takk for din støtte!</string>
-    <string name="appirator_button_rate">Vurder %s</string>
-    <string name="appirator_button_rate_later">Påminn meg senere</string>
-    <string name="appirator_button_rate_cancel">Nei, takk du</string>
+    <string name="appirater_rate_title">Sats %s</string>
+    <string name="appirater_message">Hvis du liker å bruke %s, kan du ta deg et øyeblikk for å vurdere den? Det vil ikke ta mer enn ett minutt. Takk for din støtte!</string>
+    <string name="appirater_button_rate">Vurder %s</string>
+    <string name="appirater_button_rate_later">Påminn meg senere</string>
+    <string name="appirater_button_rate_cancel">Nei, takk du</string>
 </resources>

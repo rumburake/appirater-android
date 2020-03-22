@@ -1,14 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 // Define the versions below in your root gradle file so that all modules match.
 // The root gradle definitions should look like:
 
 //ext {
-//    compileSdkVersion = 25
-//    buildToolsVersion = "25.0.2"
-//    targetSdkVersion = 25
+//    compileSdkVersion = 28
+//    targetSdkVersion = 28
 //    minSdkVersion = 9
-//    supportLibsVersion = '25.3.0'
+//    kotlin_version =
 //}
 
 // If you don't want to use defines,
@@ -17,12 +18,21 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
     defaultConfig {
         targetSdkVersion rootProject.ext.targetSdkVersion
         minSdkVersion rootProject.ext.minSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
 dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:core-ktx:1.2.0'
 }

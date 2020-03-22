@@ -1,12 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
- >
+    android:background="@drawable/dialog_background">
 
     <TextView
         android:id="@+id/textTitle"
-        android:text="@string/appirater_app_title"
+        tools:text="@string/appirater_rate_title"
         android:freezesText="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -33,7 +34,8 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="@string/appirater_message" />
+        tools:text="@string/appirater_message"
+        android:textColor="@color/appirater_message_color"/>
 
     <Button
         android:id="@+id/buttonYes"
@@ -46,7 +48,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="@string/appirater_button_rate" />
+        tools:text="@string/appirater_button_rate" />
 
     <Button
         android:id="@+id/buttonLater"
@@ -59,7 +61,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="@string/appirater_button_rate_later" />
+        tools:text="@string/appirater_button_rate_later" />
 
     <Button
         android:id="@+id/buttonNo"
@@ -72,6 +74,6 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:text="@string/appirater_button_rate_cancel" />
+        tools:text="@string/appirater_button_rate_cancel" />
 
 </LinearLayout>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appirator_rate_title">Preis %s</string>
-    <string name="appirator_message">Sie nutzen %s gerne? Dann nehmen Sie sich bitte für eine Bewertung einen Moment Zeit! Es dauert nicht länger als eine Minute. Vielen Dank!</string>
-    <string name="appirator_button_rate">Bewerte %s</string>
-    <string name="appirator_button_rate_later">Später erinnern</string>
-    <string name="appirator_button_rate_cancel">Nein, Danke</string>
+    <string name="appirater_rate_title">Preis %s</string>
+    <string name="appirater_message">Sie nutzen %s gerne? Dann nehmen Sie sich bitte für eine Bewertung einen Moment Zeit! Es dauert nicht länger als eine Minute. Vielen Dank!</string>
+    <string name="appirater_button_rate">Bewerte %s</string>
+    <string name="appirater_button_rate_later">Später erinnern</string>
+    <string name="appirater_button_rate_cancel">Nein, Danke</string>
 </resources>
