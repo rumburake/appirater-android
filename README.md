@@ -1,9 +1,9 @@
-Introduction
-------------
+# Introduction
+
 A simple to integrate and easy to use application rater for Android apps.
 
-How it works
-------------
+# How it works
+
 A dialog will prompt the user to rate the app on the app store. When the user:
  - chooses *Yes*, he is sent to the app store
  - chooses *Later*, he is reminded again later
@@ -11,16 +11,11 @@ A dialog will prompt the user to rate the app on the app store. When the user:
  
 The dialog can look like this:
 
-Default Theme:
+Default Theme: <img src="./AppiraterLight.png" width="300">
 
-<img src="./AppiraterLight.png" width="300">
-
-Customised Theme:
-
-<img src="./AppiratorDark.png" width="300">
+Customised Theme: <img src="./AppiratorDark.png" width="300">
 
 # Set up
---------
 
 ## As a compiled library
 1. Download the `appirater-android-release.aar` and place it in your libs e.g. `app/libs/appirater-android-release.aar`
@@ -43,6 +38,7 @@ Customised Theme:
                 implementation project(':appirater-android')
             [...]
         }
+
 
 # Customization
 :warning: At a minimum modify `appirater_app_title` to read the title of your app.
