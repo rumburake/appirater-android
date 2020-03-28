@@ -33,11 +33,11 @@ class AndroidPrefs(context: Context): IPrefs {
 
     private val PREF_LAUNCH_COUNT = "launch_count"
     private val PREF_EVENT_COUNT = "event_count"
-    private val PREF_ALREADY_RATED = "already_rated"
-    private val PREF_DO_NOT_RATE = "do_not_rate"
-    private val PREF_DATE_DEFERRED_RATING = "date_deferred_rating"
+    private val PREF_ALREADY_RATED = "rate_clicked"
+    private val PREF_DO_NOT_RATE = "dont_show"
+    private val PREF_DATE_DEFERRED_RATING = "date_reminder_pressed"
     private val PREF_DATE_FIRST_LAUNCHED = "date_first_launched"
-    private val PREF_LAST_VERSION_CODE = "last_version_code"
+    private val PREF_LAST_VERSION_CODE = "version_code"
 
     override var eventCount: Int = getInt(PREF_EVENT_COUNT)
         set(value) {
