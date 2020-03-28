@@ -33,11 +33,11 @@ class AndroidPrefs(context: Context): IPrefs {
 
     private val PREF_LAUNCH_COUNT = "launch_count"
     private val PREF_EVENT_COUNT = "event_count"
-    private val PREF_RATE_CLICKED = "rate_clicked"
-    private val PREF_DONT_SHOW = "dont_show"
-    private val PREF_DATE_REMINDER_PRESSED = "date_reminder_pressed"
+    private val PREF_ALREADY_RATED = "already_rated"
+    private val PREF_DO_NOT_RATE = "do_not_rate"
+    private val PREF_DATE_DEFERRED_RATING = "date_deferred_rating"
     private val PREF_DATE_FIRST_LAUNCHED = "date_first_launched"
-    private val PREF_APP_VERSION_CODE = "version_code"
+    private val PREF_LAST_VERSION_CODE = "last_version_code"
 
     override var eventCount: Int = getInt(PREF_EVENT_COUNT)
         set(value) {
@@ -51,33 +51,33 @@ class AndroidPrefs(context: Context): IPrefs {
             putInt(PREF_LAUNCH_COUNT, value)
         }
 
-    override var dateFirstLaunch: Long = getLong(PREF_DATE_FIRST_LAUNCHED)
+    override var dateFirstLaunched: Long = getLong(PREF_DATE_FIRST_LAUNCHED)
         set(value) {
             field = value
             putLong(PREF_DATE_FIRST_LAUNCHED, value)
         }
 
-    override var dontRate: Boolean = getBoolean(PREF_DONT_SHOW)
+    override var doNotRate: Boolean = getBoolean(PREF_DO_NOT_RATE)
         set(value) {
             field = value
-            putBoolean(PREF_DONT_SHOW, value)
+            putBoolean(PREF_DO_NOT_RATE, value)
         }
 
-    override var doneRate: Boolean = getBoolean(PREF_RATE_CLICKED)
+    override var alreadyRated: Boolean = getBoolean(PREF_ALREADY_RATED)
         set(value) {
             field = value
-            putBoolean(PREF_RATE_CLICKED, value)
+            putBoolean(PREF_ALREADY_RATED, value)
         }
 
-    override var dateRateLater: Long = getLong(PREF_DATE_REMINDER_PRESSED)
+    override var dateDeferredRating: Long = getLong(PREF_DATE_DEFERRED_RATING)
         set(value) {
             field = value
-            putLong(PREF_DATE_REMINDER_PRESSED, value)
+            putLong(PREF_DATE_DEFERRED_RATING, value)
         }
 
-    override var lastVersionCode: Int = getInt(PREF_APP_VERSION_CODE)
+    override var lastVersionCode: Int = getInt(PREF_LAST_VERSION_CODE)
         set(value) {
             field = value
-            putInt(PREF_APP_VERSION_CODE, value)
+            putInt(PREF_LAST_VERSION_CODE, value)
         }
 }

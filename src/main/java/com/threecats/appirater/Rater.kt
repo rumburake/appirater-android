@@ -41,19 +41,19 @@ class Rater(
         // increment launch count
         prefs.launchCount++
         // record date if this is the first launch
-        if (prefs.dateFirstLaunch == 0L) {
-            prefs.dateFirstLaunch = clock.currentTimeMillis()
+        if (prefs.dateFirstLaunched == 0L) {
+            prefs.dateFirstLaunched = clock.currentTimeMillis()
         }
 
         ifUsedEnoughShowDialog()
     }
 
     private fun ifUsedEnoughShowDialog() {
-        if (prefs.doneRate) {
+        if (prefs.alreadyRated) {
             // user already rated (i.e. was sent to app store)
             return
         }
-        if (prefs.dontRate) {
+        if (prefs.doNotRate) {
             // user doesn't want to rate
             return
         }
@@ -61,7 +61,7 @@ class Rater(
             // a minimum number of launches required before showing the dialog at all
             return
         }
-        if (prefs.dateRateLater > 0 && clock.currentTimeMillis() < prefs.dateRateLater + res.minTimeFromLater) {
+        if (prefs.dateDeferredRating > 0 && clock.currentTimeMillis() < prefs.dateDeferredRating + res.minTimeFromLater) {
             // user delayed rating, don't ask until delay is passed
             return
         }
@@ -70,7 +70,7 @@ class Rater(
             frontend.askToRate()
             return
         }
-        if (prefs.eventCount >= res.minEventsAfterTime && clock.currentTimeMillis() >= prefs.dateFirstLaunch + res.minTimeFromLaunch) {
+        if (prefs.eventCount >= res.minEventsAfterTime && clock.currentTimeMillis() >= prefs.dateFirstLaunched + res.minTimeFromLaunch) {
             // if some events happened but they were over a minimum period of time, show dialog
             frontend.askToRate()
             return
@@ -78,16 +78,16 @@ class Rater(
     }
 
     internal fun clickedYes() {
-        prefs.doneRate = true
+        prefs.alreadyRated = true
         frontend.rateOnAppStore()
     }
 
     internal fun clickedLater() {
-        prefs.dateRateLater = clock.currentTimeMillis()
+        prefs.dateDeferredRating = clock.currentTimeMillis()
     }
 
     internal fun clickedNo() {
-        prefs.dontRate = true
+        prefs.doNotRate = true
     }
 
     companion object {

@@ -3,9 +3,9 @@ package com.threecats.appirater.prefs
 interface IPrefs {
     var eventCount: Int
     var launchCount: Int
-    var dateFirstLaunch: Long
-    var dontRate: Boolean
-    var doneRate: Boolean
-    var dateRateLater: Long
+    var dateFirstLaunched: Long
+    var doNotRate: Boolean
+    var alreadyRated: Boolean
+    var dateDeferredRating: Long
     var lastVersionCode: Int
 }
