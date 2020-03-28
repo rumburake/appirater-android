@@ -8,16 +8,16 @@ import android.util.Log
 import com.threecats.appirater.R
 import com.threecats.appirater.RateActivity
 
-class AndroidFrontend(val context: Context) {
+class AndroidFrontend(val context: Context) : IFrontend {
 
-    fun askToRate() {
+    override fun askToRate() {
         Log.i(TAG, "Prompting to rate.")
         val intent = Intent(context, RateActivity::class.java)
         intent.flags += Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(intent)
     }
 
-    fun rateOnAppStore() {
+    override fun rateOnAppStore() {
         Log.i(TAG, "Launching app store to rate.")
         val playStoreIntent = Intent(Intent.ACTION_VIEW,
                 Uri.parse(String.format(context.getString(R.string.appirater_market_url), context.packageName)))

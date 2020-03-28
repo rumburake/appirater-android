@@ -1,12 +1,12 @@
 package com.threecats.appirater
 
 import com.threecats.appirater.clock.IClock
-import com.threecats.appirater.frontend.AndroidFrontend
+import com.threecats.appirater.frontend.IFrontend
 import com.threecats.appirater.prefs.IPrefs
 import com.threecats.appirater.resources.IResources
 
 class Rater(
-        private val frontend: AndroidFrontend,
+        private val frontend: IFrontend,
         private val res: IResources,
         private val prefs: IPrefs,
         private val clock: IClock
