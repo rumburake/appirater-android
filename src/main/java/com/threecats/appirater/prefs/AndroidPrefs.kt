@@ -39,16 +39,16 @@ class AndroidPrefs(context: Context): IPrefs {
     private val PREF_DATE_FIRST_LAUNCHED = "date_first_launched"
     private val PREF_APP_VERSION_CODE = "version_code"
 
-    override var eventCount: Long = getLong(PREF_EVENT_COUNT)
+    override var eventCount: Int = getInt(PREF_EVENT_COUNT)
         set(value) {
             field = value
-            putLong(PREF_EVENT_COUNT, value)
+            putInt(PREF_EVENT_COUNT, value)
         }
 
-    override var launchCount: Long = getLong(PREF_LAUNCH_COUNT)
+    override var launchCount: Int = getInt(PREF_LAUNCH_COUNT)
         set(value) {
             field = value
-            putLong(PREF_LAUNCH_COUNT, value)
+            putInt(PREF_LAUNCH_COUNT, value)
         }
 
     override var dateFirstLaunch: Long = getLong(PREF_DATE_FIRST_LAUNCHED)
