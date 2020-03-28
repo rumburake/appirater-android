@@ -48,8 +48,26 @@ class RaterTest {
         fakePrefs.eventCount = 4
         rater.onLaunch()
         assertEquals(0, fakeFrontend.timesAskedToRate)
+
         rater.onEvent()
         rater.onLaunch()
         assertEquals(1, fakeFrontend.timesAskedToRate)
     }
+
+    @Test
+    fun `when events after time hit, ask to rate`() {
+        fakePrefs.eventCount = 2
+        fakeClock.time = 1000
+        rater.onLaunch()
+        assertEquals(0, fakeFrontend.timesAskedToRate)
+
+        rater.onEvent()
+        rater.onLaunch()
+        assertEquals(0, fakeFrontend.timesAskedToRate)
+
+        fakeClock.time = 2000
+        rater.onLaunch()
+        assertEquals(1, fakeFrontend.timesAskedToRate)
+    }
+
 }
