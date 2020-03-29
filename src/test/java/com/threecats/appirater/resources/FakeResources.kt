@@ -1,6 +1,6 @@
 package com.threecats.appirater.resources
 
-class FakeResources(
+data class FakeResources(
         override val testMode: Boolean,
         override val minLaunches: Int,
         override val minTimeFromLaunch: Long,
