@@ -9,11 +9,11 @@ A dialog will prompt the user to rate the app on the app store. When the user:
  - chooses *Later*, he is reminded again later
  - chooses *No* he won't be bothered again
  
-The dialog can look like this:
+# How it looks like
 
-Default Theme: <img src="./AppiraterLight.png" width="300">
-
-Customised Theme: <img src="./AppiratorDark.png" width="300">
+| Default Theme                                | Customised Theme                            |
+-----------------------------------------------|----------------------------------------------
+| <img src="./AppiraterLight.png" width="300"> | <img src="./AppiratorDark.png" width="300"> |
 
 # Set up
 
