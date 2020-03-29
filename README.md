@@ -27,7 +27,7 @@ You should not prompt the users straight when they open the app to rate it, as t
 them and it could backfire in uninstall or negative rating. Also the users aren't ready to give a 
 fair rating unless they had a chance to use the app.
 
-Imagine you made a web browser. To maximise the chances or a fair rating, we should define some 
+Imagine you made a web browser. To maximise the chances for a fair rating, we should define some 
 rules of when the user will be invited to rate. For example:
  - don't prompt until the app was opened at least 10 times 
  - don't prompt in the first 3 days, and also until the user loaded at least 15 web pages
@@ -114,7 +114,7 @@ These are all the settings that can be configured via the XML file:
  - `appirater_app_title`: your app name
  - `appirater_market_url`: URL of your app store (default: Google Play)
    - Google Play App Store = `market://details?id=%s`
-   - Amazon App Store = `http://www.amazon.com/gp/mas/dl/android?p=%s
+   - Amazon App Store = `http://www.amazon.com/gp/mas/dl/android?p=%s`
  - `appirater_days_until_prompt`: minimum days from initial launch until prompt to rate (default: 30)
  - `appirater_launches_until_prompt`: minimum launches until it prompts to rate (default: 15)
  - `appirater_untimed_events_until_prompt`: minimum events until it prompts to rate, regardless of time since launch (default: 15)
@@ -123,7 +123,7 @@ These are all the settings that can be configured via the XML file:
  - `appirater_test_mode`: set this to *true* for testing the dialog at every launch (default: false)
  
 ## Colors
----------
+
 You can change any of those values below by re-defining it in a `colors` XML file.
  - `appirater_button_start_color`: gradient start color for buttons
  - `appirater_button_end_color`: gradient end color for buttons
@@ -132,8 +132,8 @@ You can change any of those values below by re-defining it in a `colors` XML fil
  - `appirater_message_color`: text message color
  - `appirater_background_color`: the background color of the whole dialog
 
-License
--------------------------
+# License
+
 MIT/X11: http://opensource.org/licenses/MIT
 
 This is originally forked from:
