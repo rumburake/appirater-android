@@ -31,53 +31,55 @@ class AndroidPrefs(context: Context): IPrefs {
         prefs.edit().putBoolean(key, value).apply()
     }
 
-    private val PREF_LAUNCH_COUNT = "launch_count"
-    private val PREF_EVENT_COUNT = "event_count"
-    private val PREF_ALREADY_RATED = "rate_clicked"
-    private val PREF_DO_NOT_RATE = "dont_show"
-    private val PREF_DATE_DEFERRED_RATING = "date_reminder_pressed"
-    private val PREF_DATE_FIRST_LAUNCHED = "date_first_launched"
-    private val PREF_LAST_VERSION_CODE = "version_code"
+    private enum class Keys {
+        PREF_LAUNCH_COUNT,
+        PREF_EVENT_COUNT,
+        PREF_ALREADY_RATED,
+        PREF_DO_NOT_RATE,
+        PREF_DATE_DEFERRED_RATING,
+        PREF_DATE_FIRST_LAUNCHED,
+        PREF_LAST_VERSION_CODE
+    }
 
-    override var eventCount: Int = getInt(PREF_EVENT_COUNT)
+    override var eventCount: Int = getInt(Keys.PREF_EVENT_COUNT.name)
         set(value) {
             field = value
-            putInt(PREF_EVENT_COUNT, value)
+            putInt(Keys.PREF_EVENT_COUNT.name, value)
         }
 
-    override var launchCount: Int = getInt(PREF_LAUNCH_COUNT)
+    override var launchCount: Int = getInt(Keys.PREF_LAUNCH_COUNT.name)
         set(value) {
             field = value
-            putInt(PREF_LAUNCH_COUNT, value)
+            putInt(Keys.PREF_LAUNCH_COUNT.name, value)
         }
 
-    override var dateFirstLaunched: Long = getLong(PREF_DATE_FIRST_LAUNCHED)
+    override var dateFirstLaunched: Long = getLong(Keys.PREF_DATE_FIRST_LAUNCHED.name)
         set(value) {
             field = value
-            putLong(PREF_DATE_FIRST_LAUNCHED, value)
+            putLong(Keys.PREF_DATE_FIRST_LAUNCHED.name, value)
         }
 
-    override var doNotRate: Boolean = getBoolean(PREF_DO_NOT_RATE)
+    override var doNotRate: Boolean = getBoolean(Keys.PREF_DO_NOT_RATE.name)
         set(value) {
             field = value
-            putBoolean(PREF_DO_NOT_RATE, value)
+            putBoolean(Keys.PREF_DO_NOT_RATE.name, value)
         }
 
-    override var alreadyRated: Boolean = getBoolean(PREF_ALREADY_RATED)
+    override var alreadyRated: Boolean = getBoolean(Keys.PREF_ALREADY_RATED.name)
         set(value) {
             field = value
-            putBoolean(PREF_ALREADY_RATED, value)
+            putBoolean(Keys.PREF_ALREADY_RATED.name, value)
         }
 
-    override var dateDeferredRating: Long = getLong(PREF_DATE_DEFERRED_RATING)
+    override var dateDeferredRating: Long = getLong(Keys.PREF_DATE_DEFERRED_RATING.name)
         set(value) {
             field = value
-            putLong(PREF_DATE_DEFERRED_RATING, value)
+            putLong(Keys.PREF_DATE_DEFERRED_RATING.name, value)
         }
 
-    override var lastVersionCode: Int = getInt(PREF_LAST_VERSION_CODE)
+    override var lastVersionCode: Int = getInt(Keys.PREF_LAST_VERSION_CODE.name)
         set(value) {
             field = value
-            putInt(PREF_LAST_VERSION_CODE, value)
+            putInt(Keys.PREF_LAST_VERSION_CODE.name, value)
         }
 }
