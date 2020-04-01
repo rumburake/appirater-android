@@ -19,7 +19,7 @@ A dialog will prompt the user to rate the app on the app store. When the user:
 
 | Default Theme                                | Customised Theme                            |
 |----------------------------------------------|---------------------------------------------|
-| <img src="./AppiraterLight.png" width="300"> | <img src="./AppiratorDark.png" width="300"> |
+| <img src="./AppiraterLight.png" width="300"> | <img src="./AppiraterDark.png" width="300"> |
 
 ## Logic
 
