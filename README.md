@@ -1,6 +1,4 @@
-[![](https://jitpack.io/v/rumburake/appirater-android.svg)](https://jitpack.io/#rumburake/appirater-android)
-
-# Introduction
+# Appirater-Android [![](https://jitpack.io/v/rumburake/appirater-android.svg)](https://jitpack.io/#rumburake/appirater-android)
 
 A simple to integrate and easy to use application rater for Android apps.
 
