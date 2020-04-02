@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/rumburake/appirater-android.svg)](https://jitpack.io/#rumburake/appirater-android)
+
 # Introduction
 
 A simple to integrate and easy to use application rater for Android apps.
@@ -77,6 +79,25 @@ your app is a browser, you can record it anywhere in the app:
     ...
 
 # Installation
+
+## From JitPack (recommended)
+1. Add it in your root build.gradle at the end of repositories:
+
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+2. Add the dependency:
+
+```
+	dependencies {
+	        implementation 'com.github.rumburake:appirater-android:2.2.0'
+	}
+```
 
 ## As a compiled library
 1. Download the `appirater-android-release.aar` and place it in your libs e.g. `app/libs/appirater-android-release.aar`
