@@ -1,2 +1,2 @@
-rootProject.name='appirater'
+rootProject.name='appirater-android'
 include ':appirater'
